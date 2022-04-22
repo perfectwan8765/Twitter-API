@@ -1,0 +1,7 @@
+database:
+  drivername : redshift+redshift_connector
+  host : c2VvdWwtYXBpLXJlZHNoaWZ0LmNrOWtnaThxcjRiai5hcC1ub3J0aGVhc3QtMi5yZWRzaGlmdC5hbWF6b25hd3MuY29t
+  port : 5439
+  database : dev
+  username : jsw
+  password : SmdhbWU1NDM3
