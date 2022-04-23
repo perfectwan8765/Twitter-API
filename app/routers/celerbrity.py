@@ -2,7 +2,7 @@ from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 from typing import List
 from ..database import get_db
-from .. import schemas
+from .. import schemas, oauth2
 from ..repository import celebrity
 
 router = APIRouter(
@@ -11,7 +11,7 @@ router = APIRouter(
 )
 
 @router.get('', response_model=List[schemas.Celerbrity])
-def get_celebrites(db: Session = Depends(get_db)) :
+def get_celebrites(db: Session = Depends(get_db), get_current_user: schemas.User=Depends(oauth2.get_current_user)) :
     return celebrity.get_all(db)
 
 @router.get('/{celerbrity_name}', response_model=schemas.Celerbrity)

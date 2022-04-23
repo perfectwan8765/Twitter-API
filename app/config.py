@@ -5,7 +5,7 @@ from base64 import b64decode
 class DB_Config :
     
     def __init__ (self) :
-        with open('./tweet_api/app/db-config.yml') as f :
+        with open('./app/db-config.yml') as f :
             db_config = load(f, Loader=FullLoader)['database']
 
         self.__db_drivername = db_config['drivername']
