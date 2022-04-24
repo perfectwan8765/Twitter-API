@@ -27,6 +27,7 @@ class User(BaseModel) :
     password : str
 
 class ShowUser(BaseModel) :
+    user_id : str
     name : str
     email : str
 

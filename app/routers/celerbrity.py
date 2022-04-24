@@ -7,11 +7,12 @@ from ..repository import celebrity
 
 router = APIRouter(
     prefix = '/celerbrity',
-    tags = ['Celerbirty']
+    tags = ['Celerbirty'],
+    dependencies=[Depends(oauth2.get_current_user)]
 )
 
 @router.get('', response_model=List[schemas.Celerbrity])
-def get_celebrites(db: Session = Depends(get_db), get_current_user: schemas.User=Depends(oauth2.get_current_user)) :
+def get_celebrites(db: Session = Depends(get_db)) :
     return celebrity.get_all(db)
 
 @router.get('/{celerbrity_name}', response_model=schemas.Celerbrity)

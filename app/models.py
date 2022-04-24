@@ -1,20 +1,20 @@
 from .database import Base
-from sqlalchemy import Column, Integer, String, DateTime
+from sqlalchemy import Column, Integer, String, DateTime, BigInteger
 from uuid import uuid4
 
 class Celerbrity(Base) :
     __tablename__ = 'celerbrity'
     
-    id = Column(Integer, primary_key=True)
+    id = Column(BigInteger, primary_key=True)
     celerbrity = Column(String)
     followers_count = Column(Integer)
     url = Column(String)
-    check_date = Column(DateTime)
+    check_date = Column(DateTime, primary_key=True)
 
 class Celerbrity_Tweet(Base) :
     __tablename__ = 'celerbrity_tweet'
     
-    twit_id = Column(Integer, primary_key=True)
+    twit_id = Column(BigInteger, primary_key=True)
     celerbrity = Column(String)
     tweet_url = Column(String)
     retweet_count = Column(Integer)
