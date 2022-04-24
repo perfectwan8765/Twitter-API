@@ -1,6 +1,10 @@
 fastapi
 uvicorn
 sqlalchemy
+sqlalchemy-redshift
+redshift_connector
 passlib
 bcrypt
 python-jose[cryptography]
+pyyaml
+python-multipart
